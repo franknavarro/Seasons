@@ -10,6 +10,9 @@ class App extends React.Component {
       errorMessage: ''
     };
     
+  }
+
+  componentDidMount() {
     // Get the users position
     window.navigator.geolocation.getCurrentPosition(
       position => {
