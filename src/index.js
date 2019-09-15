@@ -4,9 +4,9 @@ import SeasonDisplay from './SeasonDisplay';
 import Spinner from './Spinner';
 
 class App extends React.Component {
-  state = { 
+  state = {
     lat: null,
-    errorMessage: ''
+    errorMessage: '',
   };
 
   componentDidMount() {
@@ -17,7 +17,7 @@ class App extends React.Component {
       },
       err => {
         this.setState({ errorMessage: err.message });
-      }
+      },
     );
   }
 
@@ -30,15 +30,11 @@ class App extends React.Component {
       return <SeasonDisplay lat={this.state.lat} />;
     }
 
-    return <Spinner message="Please accept location request" />
+    return <Spinner message="Please accept location request" />;
   }
 
   render() {
-    return (
-      <div>
-        {this.renderContent()}
-      </div>
-    );
+    return <div>{this.renderContent()}</div>;
   }
 }
 
